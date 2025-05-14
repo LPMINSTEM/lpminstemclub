@@ -1,0 +1,48 @@
+/* Social links and text link styles */
+
+/* Social links */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  justify-content: center;
+}
+
+.social-links .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.social-links .cta i {
+  font-size: 1.2rem;
+}
+
+/* Text link */
+.text-link {
+  color: var(--highlight);
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+.text-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--highlight);
+  transition: var(--transition-normal);
+}
+
+.text-link:hover {
+  color: var(--text-light);
+}
+
+.text-link:hover::after {
+  width: 100%;
+}

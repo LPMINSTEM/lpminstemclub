@@ -4,100 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - LPM IN STEM</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/mobile.css">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="styles/cursor.css">
-    <link rel="stylesheet" href="styles/scrollbar.css">
+    <link rel="stylesheet" href="styles/modern.css">
+    <link rel="stylesheet" href="styles/modern-mobile.css">
+    <link rel="stylesheet" href="styles/modern-additions.css">
+    <link rel="stylesheet" href="styles/modern-social.css">
+    <link rel="stylesheet" href="styles/modern-layout.css">
+    <link rel="stylesheet" href="styles/modern-topics.css">
+    <link rel="stylesheet" href="styles/modern-contact.css">
+    <link rel="stylesheet" href="styles/modern-buttons.css">
     <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="main-nav">
-        <div class="logo-btn">
-            <div class="logo-btn">LPM IN STEM</div>
-        </div>        <ul class="nav-links">
+        <div class="logo-btn">LPM IN STEM</div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="select-topics.html" class="nav-link">Science</a></li>
-            <li><a href="Technology.html" class="nav-link">Technology</a></li>
-            <li><a href="Engenering.html" class="nav-link">Engineering</a></li>
-            <li><a href="Matthematics.html" class="nav-link">Mathematics</a></li>
-            
-            
-         
+            <li><a href="Science.html" class="nav-link">🧪 Science</a></li>
+            <li><a href="Psychology.html" class="nav-link">🧠 Psychology</a></li>
+            <li><a href="Biology.html" class="nav-link">🐋 Biology</a></li>
+            <li><a href="Astrobiology.html" class="nav-link">🌍 Astrobiology</a></li>
+            <li><a href="Contact-us.html" class="nav-link">📲 Contact</a></li>
         </ul>
     </nav>
-    <main class="content-page">
-
-    <div class="custom-cursor"></div>
-    <div class="cursor-trail"></div>
-
-    <section class="contact-container">
-        <h1>Connect With Us</h1>
-        <p>Follow us on social media and stay updated!</p>
-
-        <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61570997461309&mibextid=ZbWKwL" target="_blank" class="social-btn facebook">
-                <span class="icon"><i class="fab fa-facebook-f"></i></span>
-                <span class="text">Facebook</span>
-            </a>
-            <a href="https://www.instagram.com/lpmanouba_in_stem_club/" target="_blank" class="social-btn instagram">
-                <span class="icon"><i class="fab fa-instagram"></i></span>
-                <span class="text">Instagram</span>
-            </a>
-            <a href="https://www.tiktok.com/@lpmanouba_in_stem?_t=ZM-8sSju7C3XHR&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAabxzWDzbg4CzkDEptZX0Iu4s2gAOryVx7aq96RVi0lWrApUv-7OuZDN5tM_aem_4DXRmlmMyx0p138mJCxBHw" target="_blank" class="social-btn twitter">
-                <span class="icon"><i class="fab fa-tiktok"></i></span>
-                <span class="text"> TikTok</span>
-            </a>
-            <a href="https://www.youtube.com/@lpmanouba_in_stem_club" class="social-btn email">
-                <span class="icon"><i class="fab fa-youtube"></i></span>
-                <span class="text">Youtube</span>
-            </a>
-            <a href="https://open.spotify.com/show/0VydgxaI5cR5PYc8Wf8n5y?si=S1vQ4ZO9Sdyv30aNhZb6NQ&fbclid=PAZXh0bgNhZW0CMTEAAaY3_bicTDPDQ1f-o0AuV--7Xrpo0IfgEAWej00aoiMuZHYekKXnPuPpeeY_aem_85C2oR0g5GFWI22Y-b2yow&nd=1&dlsi=f6fa23d203fb4883" class="social-btn email">
-                <span class="icon"><i class="fab fa-spotify"></i></span>
-                <span class="text">Spotify</span>
-            </a>
-        </div>
-    </section>
-
-    </main>
     
-
-    <button id="backToTop" onclick="scrollToTop()">🔝</button>
-    <script src="cursor-costum.js"></script>
-    <script>
-        // Theme Toggle Function
-        function toggleTheme() {
-    document.body.classList.toggle('light-theme');
-    const toggleBtn = document.querySelector('.theme-toggle i');
-    toggleBtn.classList.toggle('fa-moon');
-    toggleBtn.classList.toggle('fa-sun');
-}
-
-// Dynamic Hover Effects
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        link.style.color = '#64ffda';
-    });
-    link.addEventListener('mouseleave', () => {
-        link.style.color = '#ccd6f6';
-    });
-});
-
-// Logo Button Interaction
-document.querySelector('.logo-btn').addEventListener('click', () => {
-    window.location.href = 'index.html';
-});
-const defaultTitle = document.title;
-
-window.addEventListener("blur", () => {
-document.title = "Come Back! 🚀";
-});
-
-window.addEventListener("focus", () => {
-document.title = defaultTitle;
-});
-
-</script>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Connect With Us 📲</h1>
+            <p>Follow us on social media and stay updated with our latest content</p>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+    <main class="content-page">
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Connect With Us</h2>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <p class="contact-description">Follow us on social media and stay updated with all our latest content, events, and discoveries in the world of STEM!</p>
+                        
+                        <div class="modern-social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61570997461309&mibextid=ZbWKwL" target="_blank" class="modern-social-btn">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.instagram.com/lpmanouba_in_stem_club/" target="_blank" class="modern-social-btn">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@lpmanouba_in_stem?_t=ZM-8sSju7C3XHR&_r=1" target="_blank" class="modern-social-btn">
+                                <i class="fab fa-tiktok"></i>
+                                <span>TikTok</span>
+                            </a>
+                            <a href="https://www.youtube.com/@lpmanouba_in_stem_club" target="_blank" class="modern-social-btn">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://open.spotify.com/show/0VydgxaI5cR5PYc8Wf8n5y" target="_blank" class="modern-social-btn">
+                                <i class="fab fa-spotify"></i>
+                                <span>Spotify</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LPM IN STEM</h3>
+                    <p>Exploring the wonders of science and technology</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="select-topics.html">Science Topics</a></li>
+                        <li><a href="Contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61570997461309" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lpmanouba_in_stem_club/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@lpmanouba_in_stem" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LPM IN STEM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts/modern.js"></script>
 </body>
 </html>

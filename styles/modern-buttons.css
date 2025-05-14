@@ -1,0 +1,135 @@
+/* Modern Button Styles */
+
+/* Base button style */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--highlight);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--highlight);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.cta:hover {
+  color: var(--text-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta:hover::before {
+  width: 100%;
+}
+
+.cta:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary button style */
+.cta-primary {
+  background-color: var(--highlight);
+  color: var(--text-dark);
+  border: 2px solid var(--highlight);
+}
+
+.cta-primary::before {
+  background-color: transparent;
+}
+
+.cta-primary:hover {
+  background-color: transparent;
+  color: var(--highlight);
+}
+
+/* Secondary button style */
+.cta-secondary {
+  background-color: var(--accent);
+  color: var(--text-light);
+  border: 2px solid var(--accent);
+}
+
+.cta-secondary::before {
+  background-color: transparent;
+}
+
+.cta-secondary:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+/* Small button variant */
+.cta-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Large button variant */
+.cta-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Icon button */
+.cta-icon {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .button-group {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .button-group {
+    gap: 0.5rem;
+  }
+}

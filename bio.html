@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biology 🐋 - LPM IN STEM</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="stylesheet" href="styles/modern.css">
+    <link rel="stylesheet" href="styles/modern-mobile.css">
+    <link rel="stylesheet" href="styles/modern-additions.css">
+    <link rel="stylesheet" href="styles/modern-social.css">
+    <link rel="stylesheet" href="styles/modern-layout.css">
+    <link rel="stylesheet" href="styles/modern-buttons.css">
     <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="main-nav">
         <div class="logo-btn">LPM IN STEM</div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="science.html" class="nav-link">🧪 Explore Science</a></li>
-            <li><a href="psy.html" class="nav-link">🧠 Discover Psychology</a></li>
-
+            <li><a href="Science.html" class="nav-link">🧪 Science</a></li>
+            <li><a href="Psychology.html" class="nav-link">🧠 Psychology</a></li>
+            <li><a href="Biology.html" class="nav-link">🐋 Biology</a></li>
+            <li><a href="Astrobiology.html" class="nav-link">🌍 Astrobiology</a></li>
+            <li><a href="Contact-us.html" class="nav-link">📲 Contact</a></li>
         </ul>
     </nav>
 
@@ -36,29 +49,42 @@
 
 
     </main>
-    <button id="backToTop" onclick="scrollToTop()">🔝</button>
-    <script>
-        let lastScrollY = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  let navbar = document.querySelector(".navbar");
-  if (window.scrollY > lastScrollY) {
-    navbar.classList.add("hidden"); // Hide navbar when scrolling down
-  } else {
-    navbar.classList.remove("hidden"); // Show navbar when scrolling up
-  }
-  lastScrollY = window.scrollY;
-});
-    const defaultTitle = document.title;
-
-    window.addEventListener("blur", () => {
-      document.title = "Come Back! 🚀";
-    });
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     
-    window.addEventListener("focus", () => {
-      document.title = defaultTitle;
-    });
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LPM IN STEM</h3>
+                    <p>Exploring the wonders of science and technology</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="select-topics.html">Science Topics</a></li>
+                        <li><a href="Contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61570997461309&mibextid=ZbWKwL" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lpmanouba_in_stem_club/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@lpmanouba_in_stem?_t=ZM-8sSju7C3XHR&_r=1" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@lpmanouba_in_stem_club" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://open.spotify.com/show/0VydgxaI5cR5PYc8Wf8n5y" class="social-icon" target="_blank"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LPM IN STEM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
     
-    </script>
+    <script src="scripts/modern.js"></script>
 </body>
 </html>

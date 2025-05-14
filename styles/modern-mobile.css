@@ -1,0 +1,146 @@
+/* Modern Mobile Styles */
+
+@media (max-width: 768px) {
+  /* Base adjustments */
+  body {
+    font-size: 14px;
+  }
+  
+  /* Navigation adjustments */
+  .main-nav {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .logo-btn {
+    font-size: 1.25rem;
+  }
+  
+  /* Mobile menu */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--secondary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  /* Hero section */
+  .hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  /* Category grid */
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .category-card {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .content {
+    padding: var(--spacing-md);
+  }
+  
+  .content h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Blog section */
+  .blog-section {
+    padding: var(--spacing-md);
+  }
+  
+  /* Back to top button */
+  #backToTop {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Theme toggle */
+  .theme-toggle {
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Base adjustments */
+  body {
+    font-size: 13px;
+  }
+  
+  /* Hero section */
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  /* Content adjustments */
+  .content h2 {
+    font-size: 1.25rem;
+  }
+  
+  /* Navigation */
+  .nav-links {
+    width: 100%;
+  }
+  
+  /* Blog post */
+  .blog-post {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 320px) {
+  .logo-btn {
+    font-size: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .content h2 {
+    font-size: 1.1rem;
+  }
+}

@@ -4,14 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Révolution Scientifique - LPM IN STEM</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/mobile.css">
+    <!-- Remove conflicting CSS files -->
+    <link rel="stylesheet" href="styles/modern.css">
+    <link rel="stylesheet" href="styles/modern-mobile.css">
+    <link rel="stylesheet" href="styles/modern-additions.css">
+    <link rel="stylesheet" href="styles/modern-social.css">
+    <link rel="stylesheet" href="styles/modern-layout.css">
+    <link rel="stylesheet" href="styles/modern-buttons.css">
+    <link rel="stylesheet" href="styles/modern-topics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
+    <style>
+        /* Slideshow/Carousel Styles */
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: 30px auto;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+        
+        .mySlides img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev {
+            left: 0;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: var(--highlight);
+        }
+        
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Number text (1/6 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Dots/bullets/indicators */
+        .dots-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active, .dot:hover {
+            background-color: var(--highlight);
+        }
+        
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        
+        /* Full screen image view */
+        .full-screen-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .full-screen-img img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .full-screen-img:hover {
+            cursor: pointer;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* Blog post styling */
+        .blog-post {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+        
+        /* Fix for navbar overlapping content */
+        .content-page {
+            padding-top: 80px; /* Add space for the fixed navbar */
+        }
+        
+        .blog-post h2 {
+            margin-bottom: 30px;
+            color: var(--highlight);
+            line-height: 1.4;
+        }
+        
+        .blog-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
 <body>
     <nav class="main-nav">
-        <div class="logo-btn">
-            <div class="logo-btn">LPM IN STEM</div>
-        </div>                <ul class="nav-links">
+        <div class="logo-btn">LPM IN STEM</div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html" class="nav-link"> Home </a></li>
             <li><a href="Science.html" class="nav-link">🧪 Explore Science</a></li>
             <li><a href="Psychology.html" class="nav-link">🧠 Discover Psychology</a></li>
@@ -22,80 +199,163 @@
         </ul>
     </nav>
 
-    <main class="content-page">
+    <main class="content-page" style="padding-top: 80px;">
 
 
 
         <article class="blog-post" style="text-align: center;">
             <h2 style="text-align: center;">🔬✨ Aujourd’hui marque le début d’une révolution scientifique : l’ouverture de notre tout premier domaine entièrement dédié à la recherche, à l’innovation et à la découverte ! 🏛️💡</h2>
-            <div class="scroll-container">
-                <img src="assets/images/472456853_1632838490654723_8060691279747171043_n.jpeg" alt="Cinque Terre" width="auto" height="auto" style="max-width: 50%; height: auto;">
-                <img src="assets/images/a.jpeg" alt="Northern Lights" width="auto" height="auto" style="max-width: 50%; height: auto;">
-                <img src="assets/images/1.jpg" alt="Mountains" width="auto" height="auto" style="max-width: 50%; height: auto;">
-                <img src="assets/images/2.jpg" alt="Mountains" width="auto" height="auto" style="max-width: 50%; height: auto;">
-                <img src="assets/images/3.jpg" alt="Mountains" width="auto" height="auto" style="max-width: 50%; height: auto;">
-                <img src="assets/images/4.jpg" alt="Mountains" width="auto" height="auto" style="max-width: 50%; height: auto;">
-                <style>
-                    .full-screen-img {
-
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: rgba(0, 0, 0, 0.8);
-                        display: none;
-                        justify-content: center;
-                        align-items: center;
-                        z-index: 1000;
-                    }
-                    .full-screen-img img {
-                        max-width: 90%;
-                        max-height: 90%;
-                    }
-                    .full-screen-img:hover {
-                        cursor: pointer;
-                    }
-                </style>
-                
-                <div id="fullScreenImg" class="full-screen-img" onclick="closeFullScreen()">
-                    <img src="" alt="Full Screen Image">
+            <!-- Slideshow Container -->
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 6</div>
+                    <img src="assets/images/472456853_1632838490654723_8060691279747171043_n.jpeg" alt="Science Revolution">
                 </div>
                 
-                <script>
-                    function openFullScreen(src) {
-                        const fullScreenImg = document.getElementById('fullScreenImg');
-                        fullScreenImg.style.display = 'flex';
-                        fullScreenImg.querySelector('img').src = src;
-                    }
-                    
-                    function closeFullScreen() {
-                        document.getElementById('fullScreenImg').style.display = 'none';
-                    }
-                    
-                    document.querySelectorAll('.scroll-container img').forEach(img => {
-                        img.addEventListener('click', () => openFullScreen(img.src));
-                    });
-                </script>
-              </div>
-            <div class="blog-text">
-                <a href="https://www.instagram.com/p/DFp2Bj6sj5h/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="cta">View on Instagram</a>
-                <a href="https://www.facebook.com/share/p/1DurVB5MLT/" class="cta">View on Facebook</a>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 6</div>
+                    <img src="assets/images/a.jpeg" alt="Science Event">
+                </div>
+                
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 6</div>
+                    <img src="assets/images/1.jpg" alt="Science Event">
+                </div>
+                
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 6</div>
+                    <img src="assets/images/2.jpg" alt="Science Event">
+                </div>
+                
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="assets/images/3.jpg" alt="Science Event">
+                </div>
+                
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="assets/images/4.jpg" alt="Science Event">
+                </div>
+                
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            
+            <!-- Dots/circles -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+            
+            <!-- Full Screen Image Viewer -->
+            <div id="fullScreenImg" class="full-screen-img">
+                <span class="close-btn" onclick="closeFullScreen()">&times;</span>
+                <img src="" alt="Full Screen Image">
+            </div>
+            <div class="blog-actions">
+                <a href="https://www.instagram.com/p/DFp2Bj6sj5h/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="cta">View on Instagram <i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/p/1DurVB5MLT/" class="cta">View on Facebook <i class="fab fa-facebook"></i></a>
+                <a href="Science.html" class="cta">Back to Science <i class="fas fa-arrow-left"></i></a>
         </article>
     </main>
-    <button id="backToTop" onclick="scrollToTop()">🔝</button>
-    <script src="cursor-costum.js"></script>
-    <script>
-        const defaultTitle = document.title;
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     
-        window.addEventListener("blur", () => {
-          document.title = "Come Back! 🚀";
-        });
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LPM IN STEM</h3>
+                    <p>Exploring the wonders of science and technology</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="select-topics.html">Science Topics</a></li>
+                        <li><a href="Contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61570997461309&mibextid=ZbWKwL" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lpmanouba_in_stem_club/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@lpmanouba_in_stem?_t=ZM-8sSju7C3XHR&_r=1" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@lpmanouba_in_stem_club" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://open.spotify.com/show/0VydgxaI5cR5PYc8Wf8n5y" class="social-icon" target="_blank"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LPM IN STEM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts/modern.js"></script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
         
-        window.addEventListener("focus", () => {
-          document.title = defaultTitle;
-        });
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
         
-            </script>
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+        
+        // Full screen functionality
+        function openFullScreen(src) {
+            const fullScreenImg = document.getElementById('fullScreenImg');
+            fullScreenImg.style.display = 'flex';
+            fullScreenImg.querySelector('img').src = src;
+        }
+        
+        function closeFullScreen() {
+            document.getElementById('fullScreenImg').style.display = 'none';
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to all slideshow images
+            document.querySelectorAll('.mySlides img').forEach(img => {
+                img.addEventListener('click', () => openFullScreen(img.src));
+            });
+            
+            // Auto slideshow
+            setInterval(function() {
+                plusSlides(1);
+            }, 5000); // Change image every 5 seconds
+        });
+    </script>
 </body>
 </html>

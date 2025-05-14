@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychology Episods - LPM IN STEM</title>
+    <link rel="stylesheet" href="styles/modern.css">
+    <link rel="stylesheet" href="styles/modern-mobile.css">
+    <link rel="stylesheet" href="styles/modern-additions.css">
+    <link rel="stylesheet" href="styles/modern-social.css">
+    <link rel="stylesheet" href="styles/modern-layout.css">
+    <link rel="stylesheet" href="styles/modern-buttons.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/mobile.css">
     <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <body>
     <nav class="main-nav">
         <div class="logo-btn">
@@ -41,17 +49,6 @@
     </main>
     <button id="backToTop" onclick="scrollToTop()">🔝</button>
     <script src="cursor-costum.js"></script>
-    <script>
-        const defaultTitle = document.title;
-    
-        window.addEventListener("blur", () => {
-          document.title = "Come Back! 🚀";
-        });
-        
-        window.addEventListener("focus", () => {
-          document.title = defaultTitle;
-        });
-        
-            </script>
+    <!-- Title remains consistent regardless of tab focus -->
 </body>
 </html>

@@ -4,123 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LPM IN STEM - Science Hub</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="stylesheet" href="styles/modern.css">
+    <link rel="stylesheet" href="styles/modern-mobile.css">
+    <link rel="stylesheet" href="styles/modern-additions.css">
+    <link rel="stylesheet" href="styles/modern-social.css">
+    <link rel="stylesheet" href="styles/modern-layout.css">
+    <link rel="stylesheet" href="styles/modern-buttons.css">
     <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="main-nav">
-        <div class="logo-btn">
-            <div class="logo-btn">LPM IN STEM</div>
-        </div>        <ul class="nav-links">
+        <div class="logo-btn">LPM IN STEM</div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
             <li><a href="select-topics.html" class="nav-link">Science</a></li>
             <li><a href="Technology.html" class="nav-link">Technology</a></li>
             <li><a href="Engenering.html" class="nav-link">Engineering</a></li>
             <li><a href="Matthematics.html" class="nav-link">Mathematics</a></li>
             <li><a href="Contact-us.html" class="nav-link">Contact Us</a></li>
-            
-            
-         
         </ul>
     </nav>
 
     <header class="hero">
-        <h1 id="typewriter">Explore Scientific Wonders</h1>
-        <p id="typewriter">Dive into the world of STEM through curated educational content</p>
+        <div class="hero-content">
+            <h1>Explore Scientific Wonders</h1>
+            <p>Dive into the world of STEM through curated educational content</p>
+            <div class="hero-buttons">
+                <a href="select-topics.html" class="cta cta-primary">Explore Topics <i class="fas fa-microscope"></i></a>
+                <a href="Contact-us.html" class="cta">Contact Us <i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
     </header>
 
-    <main class="category-grid">
-        <section class="category-card" id="physics">
-            <div class="content">
-                <h2 id="typewriter" class="h2">Science</h2>
-                <p id="typewriter">"Science is the great antidote to the poison of enthusiasm and superstition."</p>
-                <p id="typewriter"> – Adam Smith</p>
-                <a href="select-topics.html" class="cta">View Content ⮚</a>
-            </div>
-        </section>
-        <section class="category-card" id="space">
-            <div class="content">
-                <h2 id="typewriter" class="h2">Technology</h2>
-                <h1 id="typewriter">Content Coming Soon!</h1>
-                <p id="typewriter">We're working hard to prepare amazing educational materials for you.</p>
-            </div>
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Explore STEM Categories</h2>
+            <p class="section-description">Discover fascinating topics across Science, Technology, Engineering, and Mathematics</p>
+            
+            <div class="featured-grid">
+                <div class="featured-card" id="science">
+                    <div class="featured-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science</h3>
+                    <p>"Science is the great antidote to the poison of enthusiasm and superstition."</p>
+                    <p class="quote-author">– Adam Smith</p>
+                    <a href="select-topics.html" class="cta">View Content <i class="fas fa-arrow-right"></i></a>
+                </div>
                 
-            </div>
-    <div class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon"></i>
-    </div>
-        </section>
-        
-        <section class="category-card" id="biology">
-            <div class="content">
-                <h2 id="typewriter" class="h2">Engineering</h2>
-                <h1 id="typewriter">Content Coming Soon!</h1>
-                <p id="typewriter">We're working hard to prepare amazing educational materials for you.</p>
-            </div>
+                <div class="featured-card" id="technology">
+                    <div class="featured-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Technology</h3>
+                    <div class="coming-soon-badge">
+                        <span>Coming Soon</span>
+                    </div>
+                    <p>We're working hard to prepare amazing educational materials for you.</p>
+                </div>
                 
+                <div class="featured-card" id="engineering">
+                    <div class="featured-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Engineering</h3>
+                    <div class="coming-soon-badge">
+                        <span>Coming Soon</span>
+                    </div>
+                    <p>We're working hard to prepare amazing educational materials for you.</p>
+                </div>
+                
+                <div class="featured-card" id="mathematics">
+                    <div class="featured-icon">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <h3>Mathematics</h3>
+                    <div class="coming-soon-badge">
+                        <span>Coming Soon</span>
+                    </div>
+                    <p>We're working hard to prepare amazing educational materials for you.</p>
+                </div>
             </div>
-        </section>
-
-        <section class="category-card" class="coming-soon">
-            <div class="content">
-            <i class="fas fa-tools construction-icon"></i>
-            <h2 id="typewriter" class="h2" >Mathematics</h2>
-            <h1 id="typewriter">Content Coming Soon!</h1>
-            <p id="typewriter">We're working hard to prepare amazing educational materials for you.</p>
-            </div>
-        </section>
-
-
-
-
-    </main>
-    <main class="category-grid">
-        <section class="category-card">
-            <h2 id>🌟 Click a section to begin your journey into knowledge!</h2>
-        </section>
-    </main>
-
-
-
-    <button id="backToTop" onclick="scrollToTop()">🔝</button>
-    <script src="cursor-costum.js"></script>
-
-    <script src="scripts/app.js"></script>
-    <script>
-                // Theme Toggle Function
-                function toggleTheme() {
-            document.body.classList.toggle('light-theme');
-            const toggleBtn = document.querySelector('.theme-toggle i');
-            toggleBtn.classList.toggle('fa-moon');
-            toggleBtn.classList.toggle('fa-sun');
-        }
-
-        // Dynamic Hover Effects
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                link.style.color = '#64ffda';
-            });
-            link.addEventListener('mouseleave', () => {
-                link.style.color = '#ccd6f6';
-            });
-        });
-
-        // Logo Button Interaction
-        document.querySelector('.logo-btn').addEventListener('click', () => {
-            window.location.href = 'index.html';
-        });
-        const defaultTitle = document.title;
-
-window.addEventListener("blur", () => {
-  document.title = "Come Back! 🚀";
-});
-
-window.addEventListener("focus", () => {
-  document.title = defaultTitle;
-});
-
-    </script>
+        </div>
+    </section>
     
+
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LPM IN STEM</h3>
+                    <p>Exploring the wonders of science and technology</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="select-topics.html">Science Topics</a></li>
+                        <li><a href="Contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61570997461309&mibextid=ZbWKwL" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lpmanouba_in_stem_club/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@lpmanouba_in_stem?_t=ZM-8sSju7C3XHR&_r=1" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@lpmanouba_in_stem_club" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://open.spotify.com/show/0VydgxaI5cR5PYc8Wf8n5y" class="social-icon" target="_blank"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LPM IN STEM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts/modern.js"></script>
 </body>
 </html>

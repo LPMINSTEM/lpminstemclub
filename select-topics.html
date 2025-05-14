@@ -3,81 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LPM IN STEM</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/mobile.css">
-    <link rel="stylesheet" href="styles/cursor.css">
+    <title>LPM IN STEM - Science Categories</title>
+    <link rel="stylesheet" href="styles/modern.css">
+    <link rel="stylesheet" href="styles/modern-mobile.css">
+    <link rel="stylesheet" href="styles/modern-additions.css">
+    <link rel="stylesheet" href="styles/modern-social.css">
+    <link rel="stylesheet" href="styles/modern-layout.css">
+    <link rel="stylesheet" href="styles/modern-topics.css">
+    <link rel="stylesheet" href="styles/modern-buttons.css">
     <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="main-nav">
         <div class="logo-btn">LPM IN STEM</div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            
         </ul>
     </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🔬 Welcome to LPM IN STEM!</h1>
+            <p>Explore the fascinating world of science through our curated educational content</p>
+            <div class="hero-buttons">
+                <a href="#categories" class="cta cta-primary">Browse Categories <i class="fas fa-arrow-down"></i></a>
+                <a href="Contact-us.html" class="cta">Contact Us <i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+    
     <main class="content-page">
-        <h1 class="h2">🔬 Welcome to LPM IN STEM!</h1>
-        <h2 style="text-align: center;">🌟 Click a section to begin your journey into knowledge!</h2>
-        <h1><strong>🚀 Science Categories :</strong></h1>
-        <section class="category-card" id="space">
-        <div class="content">
-            <h1 >1️⃣ Science</h1>
-            <h2>Discover the wonders of physics, chemistry, and biology! Learn about scientific principles, groundbreaking discoveries, and exciting experiments.</h2>
-            <a href="Science.html" class="cta">🧪 Explore Science ⮚</a>
-        </div>
-    </section>
-    <div>
-        <h1 style="color: #172a45;">...</h1>
-    </div>
-    <div >
-        <section class="category-card" id="space" style="text-align: center;">
-        <div class="content" style="text-align: center;">
-            <h1 >2️⃣ Psychology</h1>
-            <h2>Dive into the human mind! Learn about emotions, behavior, mental processes, and the science behind how we think and act.</h2>
-            <a href="Psychology.html" class="cta">🧠 Discover Psychology ⮚</a>
-        </div>
+        <section id="categories" class="featured-section">
+            <div class="container">
+                <h2 class="section-title">🚀 Science Categories</h2>
+                <p class="section-description">Explore our diverse range of scientific topics and begin your journey into knowledge</p>
+                
+                <div class="science-topics-grid">
+                    <div class="science-topic-card">
+                        <div class="topic-header">
+                            <div class="topic-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3>Science</h3>
+                        </div>
+                        <div class="topic-content">
+                            <p>Discover the wonders of physics, chemistry, and biology! Learn about scientific principles, groundbreaking discoveries, and exciting experiments.</p>
+                            
+                            <ul class="topic-features">
+                                <li><i class="fas fa-atom"></i> Physics principles</li>
+                                <li><i class="fas fa-vial"></i> Chemistry experiments</li>
+                                <li><i class="fas fa-microscope"></i> Scientific discoveries</li>
+                            </ul>
+                            
+                            <div class="topic-action">
+                                <a href="Science.html" class="cta">🧪 Explore Science <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="science-topic-card">
+                        <div class="topic-header">
+                            <div class="topic-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Psychology</h3>
+                        </div>
+                        <div class="topic-content">
+                            <p>Dive into the human mind! Learn about emotions, behavior, mental processes, and the science behind how we think and act.</p>
+                            
+                            <ul class="topic-features">
+                                <li><i class="fas fa-lightbulb"></i> Cognitive processes</li>
+                                <li><i class="fas fa-heartbeat"></i> Emotional intelligence</li>
+                                <li><i class="fas fa-users"></i> Social psychology</li>
+                            </ul>
+                            
+                            <div class="topic-action">
+                                <a href="Psychology.html" class="cta">🧠 Discover Psychology <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="science-topic-card">
+                        <div class="topic-header">
+                            <div class="topic-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h3>Biology</h3>
+                        </div>
+                        <div class="topic-content">
+                            <p>Explore the world of living organisms! Learn about cells, genes, evolution, and the fascinating world of biology.</p>
+                            
+                            <ul class="topic-features">
+                                <li><i class="fas fa-fish"></i> Marine ecosystems</li>
+                                <li><i class="fas fa-seedling"></i> Plant biology</li>
+                                <li><i class="fas fa-dna"></i> Genetics & evolution</li>
+                            </ul>
+                            
+                            <div class="topic-action">
+                                <a href="Biology.html" class="cta">🐋 Discover Marine Biology <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="science-topic-card">
+                        <div class="topic-header">
+                            <div class="topic-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Astrobiology</h3>
+                        </div>
+                        <div class="topic-content">
+                            <p>From distant planets🪐 to the tiniest microbes🦠, we're diving deep into the science of life beyond Earth🌍.</p>
+                            
+                            <ul class="topic-features">
+                                <li><i class="fas fa-meteor"></i> Exoplanets</li>
+                                <li><i class="fas fa-bacterium"></i> Extremophiles</li>
+                                <li><i class="fas fa-satellite"></i> Space exploration</li>
+                            </ul>
+                            
+                            <div class="topic-action">
+                                <a href="Astrobiology.html" class="cta">🌍 Discover Astrobiology <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-    </section>
-    <div>
-        <h1 style="color: #172a45;">...</h1>
-    </div>
-    <div >
-
-    <section class="category-card" id="space" style="text-align: center;">
-        <div class="content" style="text-align: center;">
-            <h1 >3️⃣ Biology</h1>
-            <h2>Explore the world of living organisms! Learn about cells, genes, evolution, and the fascinating world of biology.</h2>
-            <a href="Biology.html" class="cta">🐋 Discover Marine Biology ⮚</a>
-        </div>
-    </section>
-    <div>
-        <h1 style="color: #172a45;">...</h1>
-    </div>
-    <div >
-        <section class="category-card" id="space" style="text-align: center;">
-        <div class="content" style="text-align: center;">
-            <h1 >4️⃣ Astrobiology</h1>
-            <h2>From distant planets🪐 to the tiniest microbes🦠, we’re diving deep into the science of life beyond Earth🌍.</h2>
-            <a href="Astrobiology.html" class="cta">🌍 Discover Astrobiology ⮚</a>
-        </div>
-        
-    </section>
+        <section class="quote-section">
+            <div class="container">
+                <div class="quote-container">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="quote-text">"The important thing is to not stop questioning. Curiosity has its own reason for existing."</p>
+                    <p class="quote-author">— Albert Einstein</p>
+                </div>
+            </div>
+        </section>
 
     </main>
-    <button id="backToTop" onclick="scrollToTop()">🔝</button>
-    <script src="cursor-costum.js"></script>    
-    <script>
-        const defaultTitle = document.title;
     
-        window.addEventListener("blur", () => {
-          document.title = "Come Back! 🚀";
-        });
-        
-        window.addEventListener("focus", () => {
-          document.title = defaultTitle;
-        });
-        
-            </script>
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LPM IN STEM</h3>
+                    <p>Exploring the wonders of science and technology</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="select-topics.html">Science Topics</a></li>
+                        <li><a href="Contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61570997461309&mibextid=ZbWKwL" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lpmanouba_in_stem_club/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@lpmanouba_in_stem?_t=ZM-8sSju7C3XHR&_r=1" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@lpmanouba_in_stem_club" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://open.spotify.com/show/0VydgxaI5cR5PYc8Wf8n5y" class="social-icon" target="_blank"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LPM IN STEM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts/modern.js"></script>
 </body>
