@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 3.0 Details - LPM IN STEM CLUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            '50': '#f0f9ff',
+                            '100': '#e0f2fe',
+                            '200': '#bae6fd',
+                            '300': '#7dd3fc',
+                            '400': '#38bdf8',
+                            '500': '#0ea5e9',
+                            '600': '#0284c7',
+                            '700': '#0369a1',
+                            '800': '#075985',
+                            '900': '#0c4a6e',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="changelog.html" class="text-primary-600 hover:text-primary-800 transition-colors duration-300 font-semibold">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Changelog
+            </a>
+            <div class="text-xl font-bold text-gray-800">
+                LPM IN STEM CLUB
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Version 3.0 Details</h1>
+            <p class="text-gray-500 mb-10">A detailed breakdown of the new features, improvements, and fixes.</p>
+            
+            <div class="space-y-16">
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-3 mb-4">UI Overhaul & Design Philosophy</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        The user interface was completely redesigned with a modern, clean aesthetic. We adopted a <strong>mobile-first approach</strong> using Tailwind CSS, meaning styles are designed for small screens first and then scaled up for larger devices using responsive prefixes like `md:` and `lg:`. This ensures a flawless experience on any device. The design language emphasizes clarity and readability, with a vibrant color palette and professional typography ('Poppins' for headings, 'Inter' for body text) to create a visually engaging and consistent experience.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-3 mb-4">Folder Layout & URL Structure</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        To keep the project organized and scalable, we've implemented a logical folder structure. This makes it easy to add new content without cluttering the root directory. The `assets` folder serves as a central repository for all media, while the `topics` directory is designed to grow as new subjects are added.
+                    </p>
+                    <pre class="bg-gray-100 p-4 rounded-lg text-sm text-gray-800 overflow-x-auto"><code>v2/
+├── index.html              (Homepage)
+├── changelog.html          (Version history)
+├── v3-details.html         (This page)
+├── assets/
+│   └── images/             (All site images)
+└── topics/
+    ├── biology/            (Biology section)
+    │   └── biology.html
+    ├── psychology/         (Psychology section)
+    │   └── psychology.html
+    └── science/            (General science section)
+        ├── general-science.html
+        └── astrobiology.html
+</code></pre>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                        This structure translates directly to our URLs (e.g., `/topics/science/astrobiology.html`), keeping them clean, predictable, and SEO-friendly.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-3 mb-4">Code & Dependencies</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        The site is built with pure <strong>HTML, CSS, and vanilla JavaScript</strong>. We deliberately avoided complex frameworks like React or Vue because they would be overkill for a content-focused static site. This choice results in faster performance, easier maintenance, and no required build steps. All external libraries—Tailwind CSS, FontAwesome, and Google Fonts—are loaded via a <strong>Content Delivery Network (CDN)</strong>. This ensures users download these files from a server near them, and if they've visited another site using the same resource, it may already be cached in their browser, leading to near-instant load times.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-3 mb-4">Interactivity with JavaScript</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Vanilla JavaScript brings the site to life. Our script logic is organized into several initialization functions:
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>initMobileMenu():</strong> Toggles the visibility of the mobile navigation menu when the hamburger icon is clicked.</li>
+                        <li><strong>initThemeToggle():</strong> Switches between `light` and `dark` classes on the `<html>` element and saves the user's preference in `localStorage`.</li>
+                        <li><strong>initFadeInObserver():</strong> Uses the modern `IntersectionObserver` API to trigger subtle fade-in animations on sections as they enter the viewport.</li>
+                        <li><strong>Notification Scripts:</strong> Custom functions manage the display and dismissal of banners, also using `localStorage` to avoid repeatedly showing them to the same user.</li>
+                    </ul>
+                </div>
+
+                 <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-3 mb-4">Streamlined Navigation</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        The navigation is designed to be intuitive. The homepage features a full navigation bar with smooth-scrolling links for a single-page feel. Sub-pages adopt a more focused header with a clear "Back" link. This design choice follows established UX principles, reducing cognitive load on the user and making it easy to understand their location within the site's hierarchy.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-3 mb-4">Accessibility Commitment</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Building an inclusive web is crucial. We've incorporated several accessibility (a11y) best practices:
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Semantic HTML:</strong> Using tags like `<main>`, `<nav>`, and `<header>` gives the page a clear structure for screen readers.</li>
+                        <li><strong>Screen Reader Text:</strong> Elements like the close button on notifications include `<span class="sr-only">` text, which is hidden visually but read aloud by screen readers.</li>
+                        <li><strong>Keyboard Navigation:</strong> All interactive elements, like links and buttons, are fully accessible using the keyboard.</li>
+                        <li><strong>Color Contrast:</strong> The chosen color palette ensures that text is easily readable against its background, meeting WCAG guidelines.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-3 mb-4">Performance & SEO</h2>
+                     <p class="text-gray-700 leading-relaxed mb-4">
+                        A fast and easily discoverable site provides the best user experience. Our strategy includes:
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Fast Load Times:</strong> By avoiding heavy frameworks and loading assets from a CDN, we minimize the amount of data a user needs to download, resulting in very fast page loads.</li>
+                        <li><strong>SEO-Friendly URLs:</strong> The clean, descriptive URLs from our folder structure are easy for search engines to crawl and understand.</li>
+                        <li><strong>Semantic Markup:</strong> Using proper heading tags (`<h1>`, `<h2>`, etc.) and semantic HTML helps search engines understand the content hierarchy and importance of different sections.</li>
+                        <li><strong>Meta Tags:</strong> Each page has a unique `<title>` and will have descriptive `<meta>` tags to improve how they appear in search results.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

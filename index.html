@@ -56,6 +56,12 @@
             opacity: 0;
             pointer-events: none;
         }
+        /* Notification Banner */
+        #credits-notification {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200 scroll-smooth">
@@ -350,6 +356,31 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Credits Notification -->
+    <div id="credits-notification" class="hidden fixed bottom-5 right-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xl rounded-xl p-5 max-w-sm z-50">
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+                    <i class="fas fa-palette text-primary-600 dark:text-primary-400 text-lg"></i>
+                </div>
+            </div>
+            <div class="ml-4 flex-1">
+                <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                    Designed & Built by Serjed Trabelssi
+                </p>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    View my work on <a href="https://sejed.pages.dev" target="_blank" rel="noopener noreferrer" class="font-medium text-primary-600 dark:text-primary-400 underline cursor-pointer transition-colors duration-200 underline-offset-2">My Portfolio</a>.
+                </p>
+            </div>
+            <div class="ml-4 flex-shrink-0">
+                <button id="close-credits" class="text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors duration-200">
+                    <span class="sr-only">Close</span>
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
     <script>
@@ -370,8 +401,8 @@
             initBackToTop();
             initMobileMenu();
             initThemeToggle();
-            // initScrollReveal(); // Assuming this might not be defined, commenting out for safety
-        
+            initCreditsNotification(); 
+            initDevConsoleWarning(); 
         });
         
         // Initialize smooth scrolling
@@ -570,6 +601,99 @@
                 }, 700); // Wait for transition to finish
             });
         });
+                    // Initialize credits notification
+        function initCreditsNotification() {
+            const notification = document.getElementById('credits-notification');
+            const closeButton = document.getElementById('close-credits');
+
+            if (!notification || !closeButton) return;
+
+            if (localStorage.getItem('creditsDismissed') === 'true') {
+                return; // Keep it hidden if already dismissed
+            }
+
+            // Show the notification after a delay
+            setTimeout(() => {
+                notification.classList.remove('hidden');
+                setTimeout(() => {
+                    notification.style.opacity = '1';
+                    notification.style.transform = 'translateY(0)';
+                }, 50);
+            }, 2000);
+
+            closeButton.addEventListener('click', () => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(20px)';
+                localStorage.setItem('creditsDismissed', 'true');
+                
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                }, 500);
+            });
+        }
+
+        // Initialize developer console warning
+        function initDevConsoleWarning() {
+            const styles = {
+                message: 'color: #4ade80; font-size: 14px; font-weight: bold;',
+                warning: 'color: #facc15; font-size: 14px; font-weight: bold;',
+                info: 'color: #60a5fa; font-size: 14px; font-weight: bold;',
+                tip: 'color: #93c5fd; font-size: 14px; font-weight: bold;',
+                credits: 'color: #2563eb; font-size: 12px; font-weight: bold;'
+            };
+
+            console.log(`%c
+  __  __           _       _       
+ |  \\/  |         (_)     | |      
+ | \\  / | ___  ___ _  __ _| | ___  
+ | |\\/| |/ _ \\/ __| |/ _\` | |/ _ \\ 
+ | |  | |  __/\\__ \\ | (_| | | (_) |
+ |_|  |_|\\___||___/_|\\__, |_|\\___/ 
+                      __/ |        
+                     |___/         
+Welcome to the dev console.`, styles.message);
+
+            console.log(`%c
+  ____       _     _     _           
+ |  _ \\     | |   | |   (_)          
+ | |_) | ___| |__ | |__  _ _ __  ___ 
+ |  _ < / _ \\ '_ \\| '_ \\| | '_ \\/ __|
+ | |_) |  __/ | | | | | | | |_) \\__ \\
+ |____/ \\___|_| |_|_| |_|_| .__/|___/
+                          | |        
+                          |_|        
+⚠️  Do not paste anything here unless you know what you're doing!`, styles.warning);
+
+            console.log(`%c
+  _____       _               _     
+ |  __ \\     | |             (_)    
+ | |__) |   _| |_   ___  _ __ _ ___ 
+ |  ___/ | | | | | | \\ \\/ / '__/ __|
+ | |   | |_| | | |_| |>  <| |  \\__ \\
+ |_|    \\__,_|_|\\__,_/_/\\_\\_|  |___/
+                                    
+👉 This space is for developers. Stay safe.`, styles.info);
+
+            console.log(`%c
+   ___  _   _ ____  _   _ _____ 
+  / _ \\| | | |  _ \\| | | |_   _|
+ | | | | | | | |_) | |_| | | |  
+ | |_| | |_| |  __/ \\___/  | |  
+  \\__\\_\\\\___/|_|         |_|  
+                      
+💡 Curious? Learn more at MDN Web Docs.`, styles.tip);
+
+            console.log(`%c
+   ____ ____  _____ ____  ____ _____ _____ ____  
+  / ___|  _ \| ____|  _ \|  _ \_   _| ____|  _ \ 
+ | |   | | | |  _| | | | | | | || | |  _| | | | |
+ | |___| |_| | |___| |_| | |_| || | | |___| |_| |
+  \____|____/|_____|____/|____/ |_| |_____|____/ 
+ Console messages crafted by Sejed TRABELSSI
+     Portfolio → https://sejed.pages.dev
+
+`, styles.credits);
+        }
     </script>
 </body>
 </html>
