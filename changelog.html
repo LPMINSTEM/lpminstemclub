@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - LPM IN STEM CLUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* Timeline vertical line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: #d1d5db;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        /* Timeline Item */
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        /* Place items on the left */
+        .timeline-item.left {
+            left: 0;
+        }
+
+        /* Place items on the right */
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        /* The circle on the timeline */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid #3b82f6; /* primary-500 */
+            top: 24px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.right::after {
+            left: -12px;
+        }
+
+        /* The content */
+        .timeline-content {
+            padding: 20px 30px;
+            position: relative;
+            border-radius: 0.75rem;
+        }
+
+        /* Notification Banner */
+        #credits-notification {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Responsive adjustments for mobile */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item.left, .timeline-item.right {
+                left: 0;
+            }
+            .timeline-item::after {
+                left: 18px;
+            }
+            .timeline-item.right::after {
+                left: 18px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-xl shadow-lg sticky top-0 w-full z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <a href="index.html" class="flex items-center">
+                    <div class="text-xl font-bold text-primary-600">LPM IN STEM CLUB</div>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-16 px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Website Changelog</h1>
+            <p class="mt-4 text-lg text-gray-600">Tracking all the awesome updates and improvements to our site.</p>
+        </header>
+
+        <div class="timeline">
+            <!-- Version 3.0 -->
+            <div class="timeline-item left">
+                <div class="timeline-content bg-white shadow-xl">
+                    <time class="text-sm font-semibold text-primary-600">Started JULY 10, 2025 | Published On JULY 12, 2025</time>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-2 mb-4">Version 3.0 - The Complete Overhaul</h2>
+                    <p class="text-gray-600 mb-4">A complete rebuild focusing on modern design, interactivity, and new content sections.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-start"><span class="flex-shrink-0 w-5 h-5 bg-green-500/20 text-green-600 rounded-full flex items-center justify-center mr-3"><i class="fas fa-plus text-xs"></i></span><span class="font-semibold">New Feature:</span> Dynamic homepage, in-depth topic pages.</div>
+                        <div class="flex items-start"><span class="flex-shrink-0 w-5 h-5 bg-blue-500/20 text-blue-600 rounded-full flex items-center justify-center mr-3"><i class="fas fa-arrow-up text-xs"></i></span><span class="font-semibold">Improvement:</span> Fully responsive design with Tailwind CSS and interactive elements.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Version 3.1 -->
+            <div class="timeline-item right">
+                <div class="timeline-content bg-white shadow-xl">
+                    <time class="text-sm font-semibold text-primary-600"></time>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-2 mb-4">Version 3.1 - Coming Soon !</h2>
+                    <p class="text-gray-600 mb-4">More content and features are on the way!</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Credits Notification -->
+    <div id="credits-notification" class="hidden fixed bottom-5 right-5 bg-white border border-gray-200 shadow-2xl rounded-xl p-5 max-w-sm z-50">
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
+                    <i class="fas fa-palette text-primary-600 text-lg"></i>
+                </div>
+            </div>
+            <div class="ml-4 flex-1">
+                <p class="text-sm font-semibold text-gray-800">
+                    Designed & Built by Serjed Trabelssi
+                </p>
+                <p class="mt-1 text-sm text-gray-600">
+                    View my work on <a href="https://sejed.pages.dev" target="_blank" rel="noopener noreferrer" class="font-medium text-primary-600 underline cursor-pointer transition-colors duration-200 underline-offset-2">My Portfolio</a>.
+                </p>
+            </div>
+            <div class="ml-4 flex-shrink-0">
+                <button id="close-credits" class="text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                    <span class="sr-only">Close</span>
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notification = document.getElementById('credits-notification');
+            const closeButton = document.getElementById('close-credits');
+
+            if (!notification || !closeButton) return;
+
+            if (localStorage.getItem('creditsDismissed') === 'true') {
+                return; // Keep it hidden if already dismissed
+            }
+
+            // Show the notification after a delay
+            setTimeout(() => {
+                notification.classList.remove('hidden');
+                setTimeout(() => {
+                    notification.style.opacity = '1';
+                    notification.style.transform = 'translateY(0)';
+                }, 50);
+            }, 1500);
+
+            closeButton.addEventListener('click', () => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(20px)';
+                localStorage.setItem('creditsDismissed', 'true');
+                
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

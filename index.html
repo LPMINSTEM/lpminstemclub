@@ -46,22 +46,15 @@
         }
     </script>
     <style type="text/tailwindcss">
-        @layer components {
-            .btn-primary {
-                @apply px-6 py-3 rounded-lg font-medium bg-primary-600 hover:bg-primary-700 text-white transition-colors duration-200 transform hover:scale-105;
-            }
-            .btn-outline {
-                @apply px-6 py-3 rounded-lg font-medium border-2 border-white text-white hover:bg-white hover:bg-opacity-10 transition-colors duration-200;
-            }
-            .section-title {
-                @apply text-3xl font-bold text-gray-900 dark:text-white text-center mb-4;
-            }
-            .section-subtitle {
-                @apply text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-12;
-            }
-            .card {
-                @apply bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
-            }
+
+
+        #mobile-menu {
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        #mobile-menu.hidden {
+            transform: translateY(-10px);
+            opacity: 0;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -76,10 +69,10 @@
                 <span class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">LPM</span>
             </div>
         </div>
-        <p class="text-gray-600 dark:text-gray-400 text-lg font-medium">Loading...</p>
+        <p class="text-gray-600 dark:text-gray-400 text-lg font-medium">Content is loading, thank you for your patience...</p>
     </div>
     <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10">
+    <nav class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-lg fixed w-full z-30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -104,7 +97,7 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 pb-4 px-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 pb-4 px-4 absolute w-full shadow-lg">
             <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
             <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
             <a href="#topics" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Topics</a>
@@ -121,7 +114,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="relative h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 dark:from-gray-900 dark:to-gray-800 text-white">
+    <header id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 dark:from-gray-900 dark:to-gray-800 text-white pt-24 pb-16 sm:pt-32 sm:pb-24">
         <!-- Animated Background Elements -->
         <div class="absolute inset-0 overflow-hidden opacity-20">
             <div class="absolute top-0 left-0 w-full h-full bg-grid-white/10"></div>
@@ -137,7 +130,7 @@
                         <span class="h-2 w-2 rounded-full bg-primary-300 mr-2 animate-pulse"></span>
                         Welcome to LPM IN STEM CLUB
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                         Empowering the Next Generation of 
                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-primary-200">
                             STEM Innovators
@@ -146,14 +139,14 @@
                     <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto lg:mx-0">
                         Join us in exploring the exciting world of Science, Technology, Engineering, and Mathematics through hands-on learning, research, and innovation.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#topics" class="btn-primary bg-white text-primary-700 hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 flex items-center justify-center">
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#topics" class="px-6 py-3 rounded-lg font-medium bg-white text-primary-700 hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 flex items-center justify-center">
                             <span>Explore Programs</span>
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
                         </a>
-                        <a href="#contact" class="btn-outline border-white text-white hover:bg-white/10 hover:scale-105 transform transition-all duration-300 flex items-center justify-center">
+                        <a href="#contact" class="px-6 py-3 rounded-lg font-medium border-2 border-white text-white hover:bg-white hover:bg-opacity-10 transition-colors duration-200 transform hover:scale-105 flex items-center justify-center">
                             <span>Join Our Community</span>
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -162,7 +155,7 @@
                     </div>
                     
                     <!-- Stats -->
-                    <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                    <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
                         <div class="text-center p-4 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10">
                             <div class="text-3xl font-bold text-white mb-1">20+</div>
                             <div class="text-sm text-gray-300">Members</div>
@@ -179,23 +172,23 @@
                 </div>
                 
                 <!-- Right Column - Image/Illustration -->
-                <div class="relative" data-aos="fade-left" data-aos-delay="200">
+                <div class="relative mt-12 lg:mt-0 max-w-md mx-auto lg:mx-0" data-aos="fade-left" data-aos-delay="200">
                     <div class="relative z-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl p-1 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                        <img src="https://static.jobat.be/uploadedImages/grandstemstem.jpg" 
                              alt="Students collaborating on STEM project" 
-                             class="w-full h-auto rounded-2xl shadow-lg"
+                             class="w-full h-auto rounded-2xl shadow-lg object-contain object-center"
                         >
                     </div>
                     <!-- Decorative Elements -->
-                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                    <div class="absolute -bottom-8 right-20 w-24 h-24 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob hidden lg:block"></div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 hidden lg:block"></div>
+                    <div class="absolute -bottom-8 right-20 w-24 h-24 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 hidden lg:block"></div>
                 </div>
             </div>
         </div>
         
         <!-- Scroll Indicator -->
-        <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 bg-white/20 dark:bg-gray-700/30 backdrop-blur-md rounded-full px-6 py-3 shadow-lg">
+        <div class="hidden md:flex fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 bg-white/20 dark:bg-gray-700/30 backdrop-blur-md rounded-full px-6 py-3 shadow-lg">
             <a href="#about" class="flex flex-col items-center text-white/80 hover:text-white transition-colors">
                 <span class="block animate-bounce">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +204,7 @@
     <section id="about" class="py-16 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="section-title">About Us</h2>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-4">About Us</h2>
                 <div class="w-20 h-1 bg-primary-600 mx-auto mt-4"></div>
             </div>
             <div class="max-w-4xl mx-auto text-center">
@@ -229,8 +222,8 @@
     <section id="topics" class="py-16 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="section-title">Explore Our Topics</h2>
-                <p class="section-subtitle">Discover the exciting world of STEM through our diverse range of topics and activities</p>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-4">Explore Our Topics</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-12">Discover the exciting world of STEM through our diverse range of topics and activities</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <a href="topics/science.html" class="group block p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg dark:bg-gray-700 bg-white border border-gray-200 dark:border-gray-600 text-center">
@@ -279,8 +272,8 @@
     <section id="contact" class="py-16 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Have questions or want to join our club? Send us a message!</p>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-12">Have questions or want to join our club? Send us a message!</p>
             </div>
             <div class="max-w-3xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden">
                 <div class="md:flex">
@@ -353,7 +346,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0">
+    <button id="back-to-top" class="hidden fixed bottom-20 right-5 bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg cursor-pointer z-20">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -377,7 +370,8 @@
             initBackToTop();
             initMobileMenu();
             initThemeToggle();
-            initScrollReveal();
+            // initScrollReveal(); // Assuming this might not be defined, commenting out for safety
+        
         });
         
         // Initialize smooth scrolling
@@ -532,6 +526,50 @@
                 observer.observe(section);
             });
         }
+    </script>
+
+
+    <!-- Changelog Notification -->
+    <div id="changelog-notification" class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 w-full max-w-md bg-white dark:bg-gray-800 shadow-2xl rounded-xl p-5 z-50 transform translate-y-full opacity-0 transition-all duration-700 ease-out">
+        <audio id="notification-sound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto"></audio>
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <i class="fas fa-bell text-2xl text-primary-500"></i>
+            </div>
+            <div class="ml-4 flex-grow">
+                <h4 class="font-bold text-lg text-primary-600 dark:text-primary-400">Welcome to the Club!</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Want to see what's new? Check out the changelog.</p>
+            </div>
+            <div class="ml-4 flex-shrink-0">
+                <button id="close-notification-btn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-2xl">&times;</button>
+            </div>
+        </div>
+        <div class="mt-4 flex space-x-2">
+            <a href="changelog.html" class="btn-primary flex-1 text-center">Click here to view changelog...</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notification = document.getElementById('changelog-notification');
+            const closeBtn = document.getElementById('close-notification-btn');
+
+            const notificationSound = document.getElementById('notification-sound');
+
+            // Show notification after a delay
+            setTimeout(() => {
+                notification.classList.remove('hidden', 'translate-y-full', 'opacity-0');
+                notificationSound.play().catch(e => console.error("Audio play failed: ", e));
+            }, 2000); // 2-second delay
+
+            // Hide notification on close
+            closeBtn.addEventListener('click', () => {
+                notification.classList.add('translate-y-full', 'opacity-0');
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                }, 700); // Wait for transition to finish
+            });
+        });
     </script>
 </body>
 </html>
